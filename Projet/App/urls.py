@@ -10,5 +10,6 @@ urlpatterns = [
     path('affiche1/', Affiche.as_view(),name='liste'),
     path('ajouter/',views.ajouter,name='ajouter'),
     path('ajouter2/',views.ajouterP.as_view()),
-    path('delete/<int:id>',views.delete,name='supp')
+    path('delete/<int:id>',views.delete,name='supp'),
+    path('delete2/<int:pk>',views.deleteP.as_view(),name='supp2')
 ]

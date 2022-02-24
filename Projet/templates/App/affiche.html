@@ -21,6 +21,7 @@
         <td>{{ p.description }}</td>
         <td>{{ p.est_valide }}</td>
         <td><a href="{% url 'supp' p.id %}">Delete</a></td>
+        <td><a href="{% url 'supp2' p.id %}">DeleteGeneric</a></td>
         </tr>
     {% endfor %}
 </table>

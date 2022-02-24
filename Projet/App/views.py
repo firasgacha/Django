@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DeleteView
 
 from .forms import AddProjectForm
 from .models import Projet
@@ -66,4 +66,12 @@ def delete(request,id):
     projet = Projet.objects.get(pk = id)
     projet.delete()
     return HttpResponseRedirect(reverse('liste'))
+
+class deleteP(DeleteView):
+    model = Projet
+    success_url = reverse_lazy('liste')
+
+
+def update(request,id):
+
 
